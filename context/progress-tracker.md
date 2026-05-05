@@ -4,11 +4,11 @@ Update this file whenever the current phase, active feature, or implementation s
 
 ## Current Phase
 
-- Feature: 01-design-system
+- Feature: 02-editor
 
 ## Current Goal
 
-- Install and configure shadcn/ui, add UI primitive components, create `cn()` utility, and ensure dark theme compatibility.
+- Build the base editor chrome components: `editor-navbar` and `project-sidebar`, and establish the dialog pattern for future use.
 
 ## Completed
 
@@ -27,6 +27,12 @@ Update this file whenever the current phase, active feature, or implementation s
   - All components use semantic CSS variable tokens mapped to dark theme values in `globals.css` — no hardcoded light styling
   - TypeScript compiles cleanly (`tsc --noEmit` passes with zero errors)
   - No modifications made to generated `components/ui/*` files
+
+- **02-editor** — Editor chrome components:
+  - `components/editor/editor-navbar.tsx` — fixed-height top navbar with sidebar toggle (`PanelLeftOpen`/`PanelLeftClose` icons), left/center/right layout, dark background with border
+  - `components/editor/project-sidebar.tsx` — floating sidebar with slide-in animation, backdrop overlay, `Projects` header with close button, shadcn `Tabs` (My Projects / Shared) with empty placeholder states, full-width `New Project` button with `Plus` icon
+  - Dialog pattern — existing `components/ui/dialog.tsx` provides `DialogTitle`, `DialogDescription`, `DialogFooter` ready for future use; no custom dialogs built per spec
+
 ## In Progress
 
 - Nothing currently in progress.
@@ -44,4 +50,7 @@ Update this file whenever the current phase, active feature, or implementation s
 ## Session Notes
 
 - Design system foundation is ready. Next features should compose these primitives in app-level components.
+
+
+
 
